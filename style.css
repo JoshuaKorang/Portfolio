@@ -1,0 +1,451 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure that the body takes up the full height of the viewport */
+}
+
+
+/* General Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    margin: 0; /* Remove default margin */
+}
+
+main {
+    flex: 1; /* Allow the main content to expand, pushing the footer to the bottom */
+    padding-top: 50px; /* Prevent header overlap */
+}
+
+.hero-text p {
+    margin-top: 30px;
+    color: black;
+}
+
+/* Header Styling */
+header {
+    background-color: black;
+    position: fixed; /* Fix the header at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure header is above all other content */
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: "Gloria Hallelujah", sans-serif;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background-image: url('images/hero-bg.jpg'); /* Replace with your actual background */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0px; /* Adjust margin to avoid overlap with fixed header */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*I can change background color change with 'background-color' property */
+    z-index: 1;
+}
+
+.hero-text {
+    z-index: 2; /* Make sure text is above the background overlay */
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    animation: fadeIn 2s ease forwards;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2.5s ease forwards;
+}
+
+.hero-text .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-text .btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+
+
+/* Animation for text */
+.animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.5s ease forwards;
+    font-family: "Rubik", Arial;
+    font-weight: 500;
+    color: black;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 100px 20px; /* Increase padding to avoid overlap */
+    background-color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.about-section .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about-section .btn:hover {
+    background-color: #555;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 20px; /* Padding to avoid overlap */
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.projects-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Make the project cards responsive */
+    justify-content: center; /* Center the cards */
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Add hover effect to the project cards */
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.project-card img, .project-card video {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .projects-container {
+        flex-direction: column; /* Stack project cards vertically on smaller screens */
+        align-items: center;
+    }
+    .skills-slider-container {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+    .slide {
+        width: 100px; /* Smaller slides on mobile */
+        height: 100px;
+        margin: 0 5px;
+    }
+    .skills-section h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Timeline Section Styles */
+.timeline-section {
+    margin: 50px 0;
+    padding: 20px;
+    text-align: center; /* Center all text within the section */
+}
+
+.timeline-section h2 {
+    font-family: "Arial", sans-serif;
+    font-size: 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #bbb;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: -1; /* Place the line behind timeline items */
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    width: 45%; /* Reduced width to ensure the item is not too wide */
+    margin-bottom: 50px; /* Increased margin to ensure spacing between items */
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0; /* Align left side of the timeline */
+    text-align: right; /* Text align right for left side items */
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%; /* Align right side of the timeline */
+    transform: translateX(50%); /* Shift to right properly */
+    text-align: left; /* Text align left for right side items */
+}
+
+.timeline-date {
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: 5px;
+    top: 15px;
+    transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: calc(100% + 20px); /* Move the date further to the left of the content box */
+    top: 50%; /* Center vertically with respect to the timeline item */
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: calc(100% + 20px); /* Move the date further to the right of the content box */
+    top: 50%; /* Center vertically with respect to the timeline item */
+    transform: translateY(-50%);
+}
+
+.timeline-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added to maintain isolation between date and content */
+    z-index: 1; /* Ensures content is above other elements, especially dates */
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+}
+
+
+
+
+
+/* Skills Section Styling */
+.skills-section {
+    padding: 100px 20px; /* Adjusted padding to account for fixed header */
+    background-color: #fff;
+    text-align: center;
+    margin-top: 70px; /* To prevent overlap with fixed header */
+}
+
+.skills-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: "Arial", sans-serif; 
+    color: #333;
+}
+
+/* Skills Slider Container */
+.skills-slider-container {
+    overflow: hidden; /* Hide overflowing slides */
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the slider */
+    position: relative;
+}
+
+/* Skills Slider */
+.skills-slider {
+    display: flex; /* Arrange slides horizontally */
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+
+/* Each Slide */
+.slide {
+    flex: 0 0 auto; /* Prevent slides from shrinking */
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    margin: 0 20px; /* Spacing between slides */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slide Images */
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: none; /* Subtle shadow */
+    transform: translateZ(0);
+}
+
+/* Ensure no borders or outlines on images */
+.skills-slider .slide img {
+    border: none;       /* Remove any border */
+    outline: none;      /* Remove any outline */
+    display: block;     /* Remove any inline spacing issues */
+    transition: transform 0.3s ease;
+}
+
+/* Additionally, ensure no borders on slide containers */
+.skills-slider .slide {
+    border: none;       /* Remove any border */
+    outline: none;      /* Remove any outline */
+}
+
+/* Optional: Remove any borders from the slider container itself */
+.skills-slider-container {
+        overflow: hidden;
+        width: 80%;
+        margin: 20px auto; /* Adjusted for spacing */
+        position: relative;      /* Remove any outline */
+}
