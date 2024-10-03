@@ -35,7 +35,7 @@ const projects = [
     },
     {
         title: "Movie Recommendation System🎞️",
-        description: "Using machine learning, the system that utilizes the MovieLens dataset in order to make a recommendation for a user.",
+        description: "Using machine learning, the system utilizes the MovieLens dataset in order to make a recommendation for a user.",
         link: "https://github.com/JoshuaKorang/MovieRecommendationSystem"
     }
 ];
