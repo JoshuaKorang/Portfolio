@@ -34,8 +34,9 @@ const projects = [
         link: "https://github.com/JoshuaKorang/OrganizeDownloadsFolder"
     },
     {
-        title: "Movie Recommendation System (Machine Learning) 🎞️",
-        description: "A movie recommendation system that utilizes the MovieLens dataset in order to make a recommendation for a user."
+        title: "Movie Recommendation System🎞️",
+        description: "Using machine learning, the system that utilizes the MovieLens dataset in order to make a recommendation for a user.",
+        link: "https://github.com/JoshuaKorang/MovieRecommendationSystem"
     }
 ];
 
