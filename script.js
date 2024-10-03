@@ -32,6 +32,10 @@ const projects = [
         title: "Organize Downloads Folder Script 📁",
         description: "A dynamic Python script to help you keep your Downloads folder clean and organized. The script automatically categorizes and moves files into respective folders based on file type.",
         link: "https://github.com/JoshuaKorang/OrganizeDownloadsFolder"
+    },
+    {
+        title: "Movie Recommendation System (Machine Learning) 🎞️",
+        description: "A movie recommendation system that utilizes the MovieLens dataset in order to make a recommendation for a user."
     }
 ];
 
